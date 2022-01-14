@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:id="ubicacion" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+	<rowConstraints>
+		<RowConstraints minHeight="10.0" prefHeight="30.0" />
+		<RowConstraints minHeight="10.0" prefHeight="30.0" />
+		<RowConstraints minHeight="10.0" prefHeight="30.0" />
+		<RowConstraints minHeight="10.0" prefHeight="30.0" />
+		<RowConstraints minHeight="10.0" prefHeight="30.0" />
+	</rowConstraints>
+	<columnConstraints>
+		<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+		<ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+	</columnConstraints>
+	<children>
+		<VBox GridPane.columnIndex="1">
+			<children>
+				<Label text="LONGITUDE">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="longitudeLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox>
+			<children>
+				<Label text="LATITUDE">
+					<font>
+						<Font name="System Bold" size="12.0" />
+					</font>
+				</Label>
+				<Label fx:id="latitudeLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox layoutX="110.0" layoutY="38.0" GridPane.rowIndex="2">
+			<children>
+				<Label text="CITY, STATE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="citystateLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+			<children>
+				<Label text="ZIP CODE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="zipcodeLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox GridPane.rowIndex="3">
+			<children>
+				<Label text="LANGUAGE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="languageLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox GridPane.columnIndex="1" GridPane.rowIndex="3">
+			<children>
+				<Label text="TIME ZONE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="timezoneLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox GridPane.rowIndex="4">
+			<children>
+				<Label text="CALLING CODE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="callingcodeLabel" text="-" />
+			</children>
+		</VBox>
+		<VBox GridPane.columnIndex="1" GridPane.rowIndex="4">
+			<children>
+				<Label text="CURRENCY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="currencyLabel" text="-" />
+			</children>
+		</VBox>
+		<HBox spacing="5.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+			<children>
+				<Label text="IP LOCATION:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+				<Label fx:id="iplocationLabel" text="-" />
+            <ImageView fx:id="flagImageView" fitHeight="21.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+			</children>
+		</HBox>
+	</children>
+</GridPane>

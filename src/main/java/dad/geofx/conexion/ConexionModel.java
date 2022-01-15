@@ -1,29 +1,15 @@
 package dad.geofx.conexion;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class ConexionModel {
 	
-	private IntegerProperty asn = new SimpleIntegerProperty();
+	private StringProperty asn = new SimpleStringProperty();
 	private StringProperty hostname = new SimpleStringProperty();
 	private StringProperty ipaddress = new SimpleStringProperty();
 	private StringProperty isp = new SimpleStringProperty();
 	private StringProperty type = new SimpleStringProperty();
-	
-	public final IntegerProperty asnProperty() {
-		return this.asn;
-	}
-	
-	public final int getAsn() {
-		return this.asnProperty().get();
-	}
-	
-	public final void setAsn(final int asn) {
-		this.asnProperty().set(asn);
-	}
 	
 	public final StringProperty hostnameProperty() {
 		return this.hostname;
@@ -73,4 +59,16 @@ public class ConexionModel {
 		this.typeProperty().set(type);
 	}
 
+	public final StringProperty asnProperty() {
+		return this.asn;
+	}
+
+	public final String getAsn() {
+		return this.asnProperty().get();
+	}
+
+	public final void setAsn(final String asn) {
+		this.asnProperty().set(asn);
+	}
+	
 }

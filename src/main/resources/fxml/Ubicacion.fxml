@@ -103,7 +103,7 @@
                   <Font name="System Bold" size="12.0" />
                </font></Label>
 				<Label fx:id="iplocationLabel" text="-" />
-            <ImageView fx:id="flagImageView" fitHeight="21.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="flagImageView" pickOnBounds="true" preserveRatio="true" />
 			</children>
 		</HBox>
 	</children>

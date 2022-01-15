@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dad.geofx.map.CheckIP;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,7 +14,7 @@ import javafx.scene.layout.GridPane;
 
 public class SeguridadController implements Initializable {
 	
-	private SeguridadModel seguridadModel = new SeguridadModel();
+	private static SeguridadModel seguridadModel = new SeguridadModel();
 
 	@FXML
 	private CheckBox crawlerCheck;
@@ -50,6 +51,13 @@ public class SeguridadController implements Initializable {
 		potentialLabel.textProperty().bind(seguridadModel.potentialProperty());
 		shieldLabel.textProperty().bind(seguridadModel.shieldProperty());
 		threatLabel.textProperty().bind(seguridadModel.threatProperty());
+	}
+	
+	public static void cambiarSeguridad(CheckIP checkip) {
+		seguridadModel.setCrawler(checkip.getSecurity().getIsCrawler());
+		seguridadModel.setPotential(checkip.getSecurity().getThreatTypes()+ "");
+		seguridadModel.setProxy(checkip.getSecurity().getIsProxy());
+		seguridadModel.setTor(checkip.getSecurity().getIsTor());
 	}
 	
 	public GridPane getSeguridad() {

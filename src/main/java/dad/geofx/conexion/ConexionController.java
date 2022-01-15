@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dad.geofx.map.CheckIP;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +13,7 @@ import javafx.scene.layout.GridPane;
 
 public class ConexionController implements Initializable {
 
-	private ConexionModel conexionModel = new ConexionModel();
+	private static ConexionModel conexionModel = new ConexionModel();
 
 	@FXML
 	private Label asnLabel;
@@ -40,12 +41,20 @@ public class ConexionController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		asnLabel.textProperty().bind(conexionModel.asnProperty().asString());
+		asnLabel.textProperty().bind(conexionModel.asnProperty());
 		hostnameLabel.textProperty().bind(conexionModel.hostnameProperty());
 		ipaddressLabel.textProperty().bind(conexionModel.ipaddressProperty());
 		ispLabel.textProperty().bind(conexionModel.ispProperty());
 		typeLabel.textProperty().bind(conexionModel.typeProperty());
 
+	}
+	
+	public static void cambiarConexion(CheckIP checkip) {
+		conexionModel.setAsn(checkip.getConnection().getAsn() + "");
+		conexionModel.setHostname(checkip.getHostname());
+		conexionModel.setIpaddress(checkip.getIp());
+		conexionModel.setIsp(checkip.getConnection().getIsp());
+		conexionModel.setType(checkip.getType());
 	}
 
 	public GridPane getConexion() {
